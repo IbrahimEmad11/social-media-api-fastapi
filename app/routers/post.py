@@ -27,15 +27,15 @@ def create_post(post: schemas.PostCreate , db: Session = Depends(get_db) , curr_
     # created_post = cursor.fetchone()
     # conn.commit()
 
-    print(curr_user)
-    created_post = models.Posts(**post.model_dump())
+    print(curr_user.email)
+    created_post = models.Posts(user_id = curr_user.id,**post.model_dump())
     db.add(created_post)
     db.commit()
     db.refresh(created_post)
 
     return created_post
 
-@router.get("/{id}")
+@router.get("/{id}",response_model= schemas.PostResponse)
 def get_post(id: int,db: Session = Depends(get_db), curr_user : int = Depends(oauth2.get_current_user)):
 
     # cursor.execute("""SELECT * FROM posts WHERE id = %s""", (str(id)))
