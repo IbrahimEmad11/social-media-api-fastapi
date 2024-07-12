@@ -18,18 +18,20 @@ def get_posts(db: Session = Depends(get_db), curr_user : int = Depends(oauth2.ge
 
     posts = db.query(models.Posts).filter(models.Posts.title.contains(search)).limit(limit).offset(skip).all()
 
+ 
+
     return posts
 
 @router.get("/profile", response_model= List[schemas.PostResponse] )
-def get_my_posts(db: Session = Depends(get_db), curr_user : int = Depends(oauth2.get_current_user)):
+def get_my_posts(db: Session = Depends(get_db), curr_user : int = Depends(oauth2.get_current_user), limit: int = 10 , skip : int = 0 , search : Optional[str] = ""):
 
     # cursor.execute(""" SELECT * from posts """)
     # posts = cursor.fetchall()
 
-    posts = db.query(models.Posts).filter(models.Posts.user_id == curr_user.id)
-    print(posts)
+    my_posts = db.query(models.Posts).filter(models.Posts.user_id == curr_user.id).filter(models.Posts.title.contains(search)).limit(limit).offset(skip).all()
 
-    return posts
+
+    return my_posts
 
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=schemas.PostResponse)
 def create_post(post: schemas.PostCreate , db: Session = Depends(get_db) , curr_user : int = Depends(oauth2.get_current_user)):
