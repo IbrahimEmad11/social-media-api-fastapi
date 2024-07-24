@@ -28,17 +28,21 @@ A comprehensive social media backend using FastAPI, featuring user authenticatio
 ## Installation
 
 1. Clone the repository:
+   ```bash
    git clone https://github.com/yourusername/fastapi-social-backend.git
    cd fastapi-social-backend
-   
+   ```
 
 2. Create and activate a virtual environment:
+   ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
 
 3. Install the dependencies:
+   ```bash
    pip install -r requirements.txt
-
+   ```
 
 4. Set up the database:
    ```bash
@@ -52,7 +56,7 @@ A comprehensive social media backend using FastAPI, featuring user authenticatio
    uvicorn app.main:app --reload
    ```
 
-2. The API documentation will be available at:
+2. Access the API documentation at:
    ```
    http://127.0.0.1:8000/docs
    ```
@@ -78,21 +82,4 @@ pytest
    docker run -d -p 8000:8000 fastapi-social-backend
    ```
 
-### Heroku
 
-1. Create a Heroku app and add a PostgreSQL database.
-2. Push the code to Heroku:
-   ```bash
-   git push heroku main
-   ```
-3. Run database migrations:
-   ```bash
-   heroku run alembic upgrade head
-   ```
-
-## License
-
-This project is licensed under the MIT License.
-```
-
-This README provides a concise overview of the project, its features, installation steps, and how to run and deploy the application.
