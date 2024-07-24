@@ -1,4 +1,3 @@
-```markdown
 # FastAPI Social Media Backend
 
 A comprehensive social media backend using FastAPI, featuring user authentication, CRUD operations, PostgreSQL integration, and JWT authentication. Includes Docker for containerization and GitHub Actions for CI/CD.
@@ -29,21 +28,17 @@ A comprehensive social media backend using FastAPI, featuring user authenticatio
 ## Installation
 
 1. Clone the repository:
-   ```bash
    git clone https://github.com/yourusername/fastapi-social-backend.git
    cd fastapi-social-backend
-   ```
+   
 
 2. Create and activate a virtual environment:
-   ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   ```
 
 3. Install the dependencies:
-   ```bash
    pip install -r requirements.txt
-   ```
+
 
 4. Set up the database:
    ```bash
