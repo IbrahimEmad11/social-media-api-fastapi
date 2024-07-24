@@ -14,12 +14,12 @@ from app import models
 
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
 
-host=os.getenv("DB_HOST")
-database=os.getenv("DB_DATABASE")
-user=os.getenv("DB_USER")
-password=os.getenv("DB_PASSWORD")
+DB_HOST=os.getenv("DB_HOST")
+DB_DATABASE=os.getenv("DB_DATABASE")
+DB_USER=os.getenv("DB_USER")
+DB_PASSWORD=os.getenv("DB_PASSWORD")
 
-SQLALCHEMY_DATABASE_URL = f"postgresql://{user}:{password}@{host}/{database}_test"
+SQLALCHEMY_DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_DATABASE}_test"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
