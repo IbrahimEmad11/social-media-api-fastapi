@@ -1,6 +1,7 @@
 # FastAPI Social Media Backend
 
 A comprehensive social media backend using FastAPI, featuring user authentication, CRUD operations, PostgreSQL integration, and JWT authentication. Includes Docker for containerization and GitHub Actions for CI/CD.
+
 ![bb](https://github.com/user-attachments/assets/f349d276-f57b-438f-ae52-1108c6b7943c)
 
 
